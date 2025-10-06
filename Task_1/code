@@ -1,0 +1,37 @@
+
+
+// Pin definitions
+const int RED = 7;
+const int YELLOW = 6;
+const int GREEN = 5;
+
+void setup() {
+  // Initialize pins as outputs
+  pinMode(RED, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+}
+
+void loop() {
+  // t0: Red ON
+  digitalWrite(RED, HIGH);
+  delay(5000); // Red for 5 seconds
+  digitalWrite(RED, LOW);
+
+  // t5: Yellow ON (transition to green)
+  digitalWrite(YELLOW, HIGH);
+  delay(1000); // Yellow for 1 second
+  digitalWrite(YELLOW, LOW);
+
+  // t6: Green ON
+  digitalWrite(GREEN, HIGH);
+  delay(5000); // Green for 5 seconds
+  digitalWrite(GREEN, LOW);
+
+  // t11: Yellow ON (transition to red)
+  digitalWrite(YELLOW, HIGH);
+  delay(1000); // Yellow for 1 second
+  digitalWrite(YELLOW, LOW);
+
+  // t12: Loop restarts
+}
